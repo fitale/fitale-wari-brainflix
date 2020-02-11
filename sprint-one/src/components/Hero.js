@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import heroImage from "../assets/images/video-list-0";
+import heroImage from "../assets/images/video-list-0.jpg";
 
 export default class Hero extends Component {
   render() {
