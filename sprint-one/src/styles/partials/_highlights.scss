@@ -1,0 +1,81 @@
+.highlights {
+  margin: 32px 16px 40px;
+  &__title {
+    @include mobile-header;
+    margin-bottom: 16px;
+  }
+  &__flex {
+    border-bottom: 2px solid $text-border;
+  }
+  &__container {
+    display: flex;
+    &--subtitle {
+      @include mobile-subheader;
+      margin-right: 8px;
+      margin-bottom: 32px;
+    }
+    &--thin-label {
+      @include mobile-labels;
+      //   font-family: AvenirThin;
+      color: $text-label;
+    }
+    &--icon {
+      margin-right: 8px;
+      margin-bottom: 24px;
+    }
+    &--para {
+      margin-right: 16px;
+      @include mobile-paragraph;
+    }
+  }
+  &__para {
+    @include mobile-paragraph;
+    padding-top: 24px;
+  }
+}
+
+@include medium {
+  .highlights {
+    margin: 48px 24px 64px;
+    &__title {
+      @include desk-tablet-header;
+      margin-bottom: 24px;
+    }
+    &__flex {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__container {
+      &--subtitle {
+        @include desk-tablet-subheader;
+      }
+      &--thin-label {
+        @include desk-tablet-labels;
+      }
+      &--para {
+        @include desk-tablet-para-comment;
+        margin-right: 24px;
+      }
+    }
+    &__para {
+      @include desk-tablet-para-comment;
+      padding-top: 40px;
+      width: 61%;
+    }
+  }
+}
+
+@include huge {
+  .highlights {
+    margin: 40px 180px 0;
+    width: 50%;
+    &__container {
+      &--para {
+        margin-right: 32px;
+      }
+    }
+    &__para {
+      width: 70%;
+    }
+  }
+}

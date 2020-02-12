@@ -1,0 +1,55 @@
+.comments {
+  margin: 0 16px;
+  border-bottom: 1px solid $text-label;
+  &__title {
+    @include mobile-subheader;
+    margin-bottom: 32px;
+  }
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    &--img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+    &--new-comment {
+      .title {
+        @include mobile-labels;
+        color: $text-label;
+        // display: flex;
+        // flex-direction: column;
+      }
+      .textarea {
+        height: 100px;
+        border: 2px solid $cta-text-link;
+        border-radius: 4px;
+        width: 100%;
+        resize: vertical;
+        &:focus,
+        &:hover {
+          cursor: pointer;
+          border: 2px solid $cta-hover;
+        }
+        &:placeholder-shown {
+          padding-left: 10px;
+          padding-top: 10px;
+        }
+      }
+      .button {
+        color: $white;
+        background-color: $cta-text-link;
+        border-color: $cta-text-link;
+        border-radius: 4px;
+        @include mobile-subheader;
+        width: 100%;
+        margin: 16px 0 24px;
+        padding: 15px;
+        &:hover {
+          background-color: $cta-hover;
+        }
+      }
+    }
+  }
+}

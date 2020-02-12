@@ -13,6 +13,11 @@
   src: url("../assets/font/AvenirNextLTProDemi.otf");
 }
 
+@font-face {
+  font-family: "AvenirThin";
+  src: url("../assets/font/AvenirNextLTProThin.otf");
+}
+
 @mixin mobile-header {
   font-size: 1.5rem;
   line-height: 2rem;

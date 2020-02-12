@@ -10,11 +10,20 @@
     display: flex;
   }
   &__search {
+    position: relative;
+    &--icon {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+    }
     &--input {
       border: 1px solid $text-border;
       border-radius: 4px;
       width: 90vw;
       height: 48px;
+      &:placeholder-shown {
+        padding-left: 35px;
+      }
     }
   }
   &__bottom {
@@ -24,15 +33,21 @@
     &--button {
       width: 226px;
       background-color: $cta-text-link;
-      border-color: $cta-text-link;
       border-radius: 4px;
       display: flex;
       justify-content: center;
+      &:hover {
+        background-color: $cta-hover;
+      }
       .text {
         background-color: $cta-text-link;
         border-color: $cta-text-link;
         color: $white;
         @include mobile-subheader;
+        &:hover {
+          background-color: $cta-hover;
+          border-color: $cta-hover;
+        }
       }
     }
     &--image {
