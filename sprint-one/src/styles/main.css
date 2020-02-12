@@ -335,32 +335,35 @@
   margin-right: 16px;
 }
 
-.comments__container--new-comment .title {
+.comments__container--section {
+  width: 100%;
+}
+
+.comments__container--section .new-comment__title {
   font-size: 0.75rem;
   line-height: 1.25rem;
   font-family: AvenirDemi;
   color: #afafaf;
 }
 
-.comments__container--new-comment .textarea {
-  height: 100px;
+.comments__container--section .new-comment__textarea {
   border: 2px solid #0095ff;
   border-radius: 4px;
   width: 100%;
   resize: vertical;
 }
 
-.comments__container--new-comment .textarea:focus, .comments__container--new-comment .textarea:hover {
+.comments__container--section .new-comment__textarea:focus, .comments__container--section .new-comment__textarea:hover {
   cursor: pointer;
   border: 2px solid #0065ad;
 }
 
-.comments__container--new-comment .textarea:placeholder-shown {
+.comments__container--section .new-comment__textarea:placeholder-shown {
   padding-left: 10px;
   padding-top: 10px;
 }
 
-.comments__container--new-comment .button {
+.comments__container--section .button {
   color: #fff;
   background-color: #0095ff;
   border-color: #0095ff;
@@ -373,8 +376,72 @@
   padding: 15px;
 }
 
-.comments__container--new-comment .button:hover {
+.comments__container--section .button:hover {
   background-color: #0065ad;
+}
+
+@media only screen and (min-width: 768px) {
+  .comments {
+    margin: 0 24px;
+  }
+  .comments__title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: AvenirDemi;
+  }
+  .comments__container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .comments__container--section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .comments__container--section .new-comment {
+    width: 440px;
+  }
+  .comments__container--section .new-comment__title {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-family: AvenirDemi;
+  }
+  .comments__container--section .new-comment__textarea {
+    width: 100%;
+  }
+  .comments__container--section .button {
+    width: 160px;
+    padding: 8px;
+    margin: 20px 40px 10px 16px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .comments {
+    margin: 0 180px;
+  }
+  .comments__container--section .new-comment {
+    width: 436px;
+  }
+}
+
+.next-video {
+  margin: 40px 16px 20px;
+}
+
+.next-video__title {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-family: AvenirDemi;
+}
+
+.next-video__container--img {
+  height: 100px;
+  width: 100px;
 }
 
 *,

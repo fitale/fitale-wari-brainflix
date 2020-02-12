@@ -12,12 +12,14 @@ export default class Comments extends Component {
             alt="usericon"
             className="comments__container--img"
           />
-          <div className="comments__container--new-comment">
-            <h3 className="title">JOIN THE CONVERSATION</h3>
-            <textarea
-              placeholder="Type your comment here..."
-              className="textarea"
-            ></textarea>
+          <div className="comments__container--section">
+            <div className="new-comment">
+              <h3 className="new-comment__title">JOIN THE CONVERSATION</h3>
+              <textarea
+                placeholder="Type your comment here..."
+                className="new-comment__textarea"
+              ></textarea>
+            </div>
             <button className="button">COMMENT</button>
           </div>
         </div>

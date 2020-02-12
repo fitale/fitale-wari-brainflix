@@ -14,27 +14,30 @@
       border-radius: 50%;
       margin-right: 16px;
     }
-    &--new-comment {
-      .title {
-        @include mobile-labels;
-        color: $text-label;
-        // display: flex;
-        // flex-direction: column;
-      }
-      .textarea {
-        height: 100px;
-        border: 2px solid $cta-text-link;
-        border-radius: 4px;
-        width: 100%;
-        resize: vertical;
-        &:focus,
-        &:hover {
-          cursor: pointer;
-          border: 2px solid $cta-hover;
+    &--section {
+      width: 100%;
+      .new-comment {
+        &__title {
+          @include mobile-labels;
+          color: $text-label;
+          // display: flex;
+          // flex-direction: column;
         }
-        &:placeholder-shown {
-          padding-left: 10px;
-          padding-top: 10px;
+        &__textarea {
+          // height: 100px;
+          border: 2px solid $cta-text-link;
+          border-radius: 4px;
+          width: 100%;
+          resize: vertical;
+          &:focus,
+          &:hover {
+            cursor: pointer;
+            border: 2px solid $cta-hover;
+          }
+          &:placeholder-shown {
+            padding-left: 10px;
+            padding-top: 10px;
+          }
         }
       }
       .button {
@@ -48,6 +51,49 @@
         padding: 15px;
         &:hover {
           background-color: $cta-hover;
+        }
+      }
+    }
+  }
+}
+
+@include medium {
+  .comments {
+    margin: 0 24px;
+    &__title {
+      @include desk-tablet-subheader;
+    }
+    &__container {
+      align-items: center;
+      &--section {
+        display: flex;
+        justify-content: flex-start;
+        .new-comment {
+          width: 440px;
+          &__title {
+            @include desk-tablet-labels;
+          }
+          &__textarea {
+            width: 100%;
+          }
+        }
+        .button {
+          width: 160px;
+          padding: 8px;
+          margin: 20px 40px 10px 16px;
+        }
+      }
+    }
+  }
+}
+
+@include huge {
+  .comments {
+    margin: 0 180px;
+    &__container {
+      &--section {
+        .new-comment {
+          width: 436px;
         }
       }
     }

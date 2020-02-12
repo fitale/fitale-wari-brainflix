@@ -1,0 +1,12 @@
+.next-video {
+  margin: 40px 16px 20px;
+  &__title {
+    @include mobile-labels;
+  }
+  &__container {
+    &--img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
