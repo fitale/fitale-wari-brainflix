@@ -65,7 +65,7 @@
       margin-right: 16px;
     }
     &--user-content {
-      width: 14.375rem;
+      width: 82vw;
       .text {
         display: flex;
         justify-content: space-between;
@@ -126,7 +126,8 @@
           }
         }
         .comment {
-          width: 624px;
+          // width: 624px;
+          width: 81vw;
           @include desk-tablet-para-comment;
         }
       }
