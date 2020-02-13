@@ -1,12 +1,67 @@
 .next-video {
-  margin: 40px 16px 20px;
+  margin: 40px 16px 0;
   &__title {
     @include mobile-labels;
+    margin-bottom: 40px;
+    color: $text-label;
   }
   &__container {
+    display: flex;
     &--img {
-      height: 100px;
-      width: 100px;
+      height: 70px;
+      width: 120px;
+      margin-bottom: 24px;
+      margin-right: 16px;
+      border-radius: 4px;
+    }
+    &--text {
+      align-items: center;
+      height: 70px;
+      .title {
+        width: 152px;
+        @include mobile-subheader;
+        margin-bottom: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .creator {
+        @include mobile-paragraph;
+      }
+    }
+  }
+}
+
+@include medium {
+  .next-video {
+    margin-left: 24px;
+    margin-right: 24px;
+    &__title {
+      @include desk-tablet-labels;
+    }
+    &__container {
+      &--text {
+        height: 70px;
+        .title {
+          width: 178px;
+          overflow: unset;
+          white-space: unset;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@include huge {
+  #huge-flex {
+    display: flex;
+    margin: 0 180px;
+    &__right {
+      .next-video {
+        margin-left: 0;
+        margin-right: 0;
+      }
     }
   }
 }

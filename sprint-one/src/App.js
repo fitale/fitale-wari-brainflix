@@ -12,9 +12,15 @@ export default function App() {
     <div id="root">
       <Header />
       <Hero />
-      <Highlights />
-      <Comments />
-      <Nextvideo />
+      <main id="huge-flex">
+        <div id="huge-flex__left">
+          <Highlights />
+          <Comments />
+        </div>
+        <div id="huge-flex__right">
+          <Nextvideo />
+        </div>
+      </main>
     </div>
   );
 }

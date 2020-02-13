@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import heroImage from "../assets/images/video-list-0.jpg";
-// import videoPlay from "../assets/icons/icon-play.svg";
-// import fullScreen from "../assets/icons/icon-fullscreen.svg";
-// import videoVol from "../assets/icons/icon-volume.svg";
+import videoPlay from "../assets/icons/icon-play.svg";
+import fullScreen from "../assets/icons/icon-fullscreen.svg";
+import videoVol from "../assets/icons/icon-volume.svg";
 export default class Hero extends Component {
   render() {
     return (
       <section className="hero">
-        <video controls poster={heroImage} className="hero__video"></video>
-        {/* <div className="hero__container">
+        <video poster={heroImage} className="hero__video"></video>
+        <div className="hero__container">
           <div className="hero__container--icons">
             <img
               src={videoPlay}
@@ -31,7 +31,7 @@ export default class Hero extends Component {
               className="hero__container--icons--img"
             />
           </div>
-        </div> */}
+        </div>
       </section>
     );
   }
