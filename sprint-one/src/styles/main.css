@@ -64,6 +64,11 @@
 
 .header__search--input:placeholder-shown {
   padding-left: 35px;
+  font-family: AvenirRegular;
+}
+
+.header__search--input:hover {
+  border: 1px solid #0065ad;
 }
 
 .header__bottom {
@@ -397,6 +402,7 @@
 .comments__container--section .new-comment__textarea:placeholder-shown {
   padding-left: 10px;
   padding-top: 10px;
+  font-family: AvenirRegular;
 }
 
 .comments__container--section .button {
@@ -414,6 +420,7 @@
 
 .comments__container--section .button:hover {
   background-color: #0065ad;
+  border-color: #0065ad;
 }
 
 .comments__old {

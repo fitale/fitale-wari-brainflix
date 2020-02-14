@@ -35,6 +35,7 @@
           &:placeholder-shown {
             padding-left: 10px;
             padding-top: 10px;
+            font-family: AvenirRegular;
           }
         }
       }
@@ -49,6 +50,7 @@
         padding: 15px;
         &:hover {
           background-color: $cta-hover;
+          border-color: $cta-hover;
         }
       }
     }

@@ -23,6 +23,10 @@
       height: 48px;
       &:placeholder-shown {
         padding-left: 35px;
+        font-family: AvenirRegular;
+      }
+      &:hover {
+        border: 1px solid $cta-hover;
       }
     }
   }
