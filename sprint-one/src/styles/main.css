@@ -79,6 +79,7 @@
 .header__bottom--button {
   width: 226px;
   background-color: #0095ff;
+  border-color: #0095ff;
   border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,22 +87,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.header__bottom--button:hover {
-  background-color: #0065ad;
-}
-
-.header__bottom--button .text {
-  background-color: #0095ff;
-  border-color: #0095ff;
   color: #fff;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: AvenirDemi;
 }
 
-.header__bottom--button .text:hover {
+.header__bottom--button:hover {
   background-color: #0065ad;
   border-color: #0065ad;
 }
@@ -183,7 +175,7 @@
 
 .hero__container--icons {
   background-color: rgba(50, 50, 50, 0.7);
-  border-radius: 10%;
+  border-radius: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -207,7 +199,6 @@
 .hero__container--icons--middle-border {
   position: absolute;
   border: 2px solid #000;
-  border-radius: 4px;
   bottom: 12.5px;
   width: 85%;
 }
@@ -546,6 +537,13 @@
   .comments__old {
     width: 712px;
   }
+  .comments__old--user-img {
+    height: 48px;
+    width: 48px;
+  }
+  .comments__old--user-content .comment {
+    width: 616px;
+  }
 }
 
 .next-video {
@@ -572,6 +570,8 @@
   margin-bottom: 24px;
   margin-right: 16px;
   border-radius: 4px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .next-video__container--text {

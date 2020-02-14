@@ -13,7 +13,7 @@
     width: 90vw;
     &--icons {
       background-color: rgba(50, 50, 50, 0.7);
-      border-radius: 10%;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -26,7 +26,6 @@
       &--middle-border {
         position: absolute;
         border: 2px solid $black;
-        border-radius: 4px;
         bottom: 12.5px;
         width: 85%;
       }

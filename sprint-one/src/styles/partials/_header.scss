@@ -33,21 +33,15 @@
     &--button {
       width: 226px;
       background-color: $cta-text-link;
+      border-color: $cta-text-link;
       border-radius: 4px;
       display: flex;
       justify-content: center;
+      color: $white;
+      @include mobile-subheader;
       &:hover {
         background-color: $cta-hover;
-      }
-      .text {
-        background-color: $cta-text-link;
-        border-color: $cta-text-link;
-        color: $white;
-        @include mobile-subheader;
-        &:hover {
-          background-color: $cta-hover;
-          border-color: $cta-hover;
-        }
+        border-color: $cta-hover;
       }
     }
     &--image {

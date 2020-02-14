@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import heroImage from "../assets/images/video-list-0.jpg";
 import videoPlay from "../assets/icons/icon-play.svg";
 import fullScreen from "../assets/icons/icon-fullscreen.svg";
 import videoVol from "../assets/icons/icon-volume.svg";
@@ -8,8 +7,6 @@ export default class Hero extends Component {
     return (
       <section className="hero">
         <video poster={this.props.heroProp} className="hero__video"></video>
-
-        {/* <video poster={heroImage} className="hero__video"></video> */}
         <div className="hero__container">
           <div className="hero__container--icons">
             <img

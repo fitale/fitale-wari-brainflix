@@ -146,6 +146,15 @@
     }
     &__old {
       width: 712px;
+      &--user-img {
+        height: 48px;
+        width: 48px;
+      }
+      &--user-content {
+        .comment {
+          width: 616px; // revisit this another time
+        }
+      }
     }
   }
 }

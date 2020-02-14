@@ -27,9 +27,8 @@ export default class Header extends Component {
           />
         </div>
         <div className="header__bottom">
-          <div className="header__bottom--button">
-            <button className="text">+ UPLOAD</button>
-          </div>
+          <button className="header__bottom--button">+ UPLOAD</button>
+
           <div className="header__bottom--image">
             <img src={userIcon} alt="usericon" className="image" />
           </div>

@@ -2,14 +2,26 @@ import React, { Component } from "react";
 import userIcon from "../assets/images/user-icon.jpg";
 export default class Comments extends Component {
   render() {
+    const divingDeeper = input => {
+      let dateObj = new Date(input);
+      let date =
+        dateObj.getMonth() +
+        1 +
+        "/" +
+        dateObj.getDate() +
+        "/" +
+        dateObj.getFullYear();
+      return date;
+    };
     let oldComments = this.props.commentProp.map((comment, i) => {
+      let date = divingDeeper(comment.date);
       return (
         <div key={i} className="comments__old">
           <div className="comments__old--user-img"></div>
           <div className="comments__old--user-content">
             <div className="text">
               <h3 className="text__name">{comment["name"]}</h3>
-              <p className="text__date">{comment["date"]}</p>
+              <p className="text__date">{date}</p>
             </div>
             <p className="comment">{comment["comment"]}</p>
           </div>
