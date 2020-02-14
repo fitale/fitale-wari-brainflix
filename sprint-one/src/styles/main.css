@@ -386,6 +386,7 @@
   border-radius: 4px;
   width: 100%;
   resize: vertical;
+  height: 150px;
 }
 
 .comments__container--section .new-comment__textarea:focus, .comments__container--section .new-comment__textarea:hover {
@@ -497,6 +498,7 @@
   }
   .comments__container--section .new-comment__textarea {
     width: 100%;
+    height: unset;
   }
   .comments__container--section .button {
     width: 160px;
