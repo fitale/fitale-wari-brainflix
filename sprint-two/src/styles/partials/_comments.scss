@@ -1,0 +1,164 @@
+.comments {
+  margin: 0 16px;
+  &__title {
+    @include mobile-subheader;
+    margin-bottom: 32px;
+  }
+  &__container {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid $text-border;
+    &--img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+    &--section {
+      width: 100%;
+      .new-comment {
+        &__title {
+          @include mobile-labels;
+          color: $text-label;
+        }
+        &__textarea {
+          border: 2px solid $cta-text-link;
+          border-radius: 4px;
+          width: 100%;
+          resize: vertical;
+          height: 150px;
+          &:focus,
+          &:hover {
+            cursor: pointer;
+            border: 2px solid $cta-hover;
+          }
+          &:placeholder-shown {
+            padding-left: 10px;
+            padding-top: 10px;
+            font-family: AvenirRegular;
+          }
+        }
+      }
+      .button {
+        color: $white;
+        background-color: $cta-text-link;
+        border-color: $cta-text-link;
+        border-radius: 4px;
+        @include mobile-subheader;
+        width: 100%;
+        margin: 16px 0 24px;
+        padding: 15px;
+        &:hover {
+          background-color: $cta-hover;
+          border-color: $cta-hover;
+        }
+      }
+    }
+  }
+  &__old {
+    display: flex;
+    border-bottom: 1px solid $text-border;
+    margin-top: 16px;
+    padding-bottom: 16px;
+    &--user-img {
+      height: 48px;
+      width: 48px;
+      background-color: $text-border;
+      border-radius: 50%;
+      margin-right: 16px;
+    }
+    &--user-content {
+      width: 82vw;
+      .text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        &__name {
+          @include mobile-subheader;
+        }
+        &__date {
+          @include mobile-labels;
+          color: $text-label;
+        }
+      }
+      .comment {
+        @include mobile-paragraph;
+      }
+    }
+  }
+}
+
+@include medium {
+  .comments {
+    margin: 0 24px;
+    &__title {
+      @include desk-tablet-subheader;
+    }
+    &__container {
+      align-items: center;
+      &--section {
+        display: flex;
+        justify-content: flex-start;
+        .new-comment {
+          width: 440px;
+          &__title {
+            @include desk-tablet-labels;
+          }
+          &__textarea {
+            width: 100%;
+            height: unset;
+          }
+        }
+        .button {
+          width: 160px;
+          padding: 8px;
+          margin: 20px 40px 10px 16px;
+        }
+      }
+    }
+    &__old {
+      &--user-content {
+        width: unset;
+        .text {
+          justify-content: unset;
+          &__name {
+            margin-right: 10px;
+            @include desk-tablet-subheader;
+          }
+          &__date {
+            @include desk-tablet-labels;
+          }
+        }
+        .comment {
+          // width: 624px;
+          width: 81vw;
+          @include desk-tablet-para-comment;
+        }
+      }
+    }
+  }
+}
+
+@include huge {
+  .comments {
+    &__container {
+      &--section {
+        .new-comment {
+          width: 436px;
+        }
+      }
+    }
+    &__old {
+      width: 712px;
+      &--user-img {
+        height: 48px;
+        width: 48px;
+      }
+      &--user-content {
+        .comment {
+          width: 616px; // revisit this another time
+        }
+      }
+    }
+  }
+}
