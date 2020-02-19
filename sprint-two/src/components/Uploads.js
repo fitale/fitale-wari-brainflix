@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Header from "./Header";
 
 export default class Uploads extends Component {
   render() {
     return (
       <>
-        <Header />
         <h3>Upload Video</h3>
         <h4>VIDEO THUMBNAIL</h4>
         <img alt="thumbnail" />

@@ -6,11 +6,9 @@ import {
   Redirect
 } from "react-router-dom";
 import Header from "./components/Header.js";
-import Hero from "./components/Hero.js";
-import Highlights from "./components/Highlights.js";
-import Comments from "./components/Comments.js";
-import Nextvideo from "./components/Nextvideo.js";
 import Uploads from "./components/Uploads.js";
+import Home from "./components/Home.js";
+
 // import uuid from "uuid/v1";
 import "./styles/main.css";
 import heroImage from "./assets/images/video-list-0.jpg";
@@ -107,6 +105,7 @@ export default class App extends Component {
   render() {
     return (
       <Router>
+        <Header />
         <Switch>
           <Redirect from="/" to="/home" exact />
           <Route
@@ -118,23 +117,4 @@ export default class App extends Component {
       </Router>
     );
   }
-}
-
-function Home(props) {
-  console.log(props);
-  return (
-    <>
-      <Header />
-      <Hero heroProp={props.state.mainVideo.image} />
-      <main id="huge-flex">
-        <div id="huge-flex__left">
-          <Highlights titleProp={props.state.mainVideo} />
-          <Comments commentProp={props.state.mainVideo.comments} />
-        </div>
-        <div id="huge-flex__right">
-          <Nextvideo videoProp={props.state.nextVideo} />
-        </div>
-      </main>
-    </>
-  );
 }
