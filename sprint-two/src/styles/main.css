@@ -92,10 +92,11 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #fff;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: AvenirDemi;
+  text-decoration: none;
+  color: #fff;
 }
 
 .header__bottom--button:hover {

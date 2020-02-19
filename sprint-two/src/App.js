@@ -1,10 +1,16 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import Header from "./components/Header.js";
 import Hero from "./components/Hero.js";
 import Highlights from "./components/Highlights.js";
 import Comments from "./components/Comments.js";
 import Nextvideo from "./components/Nextvideo.js";
+import Uploads from "./components/Uploads.js";
 // import uuid from "uuid/v1";
 import "./styles/main.css";
 import heroImage from "./assets/images/video-list-0.jpg";
@@ -101,18 +107,34 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <Header />
-        <Hero heroProp={this.state.mainVideo.image} />
-        <main id="huge-flex">
-          <div id="huge-flex__left">
-            <Highlights titleProp={this.state.mainVideo} />
-            <Comments commentProp={this.state.mainVideo.comments} />
-          </div>
-          <div id="huge-flex__right">
-            <Nextvideo videoProp={this.state.nextVideo} />
-          </div>
-        </main>
+        <Switch>
+          <Redirect from="/" to="/home" exact />
+          <Route
+            path="/home"
+            render={props => <Home state={this.state} {...props} />}
+          />
+          <Route path="/uploads" component={Uploads} />
+        </Switch>
       </Router>
     );
   }
+}
+
+function Home(props) {
+  console.log(props);
+  return (
+    <>
+      <Header />
+      <Hero heroProp={props.state.mainVideo.image} />
+      <main id="huge-flex">
+        <div id="huge-flex__left">
+          <Highlights titleProp={props.state.mainVideo} />
+          <Comments commentProp={props.state.mainVideo.comments} />
+        </div>
+        <div id="huge-flex__right">
+          <Nextvideo videoProp={props.state.nextVideo} />
+        </div>
+      </main>
+    </>
+  );
 }

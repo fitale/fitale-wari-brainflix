@@ -41,8 +41,9 @@
       border-radius: 4px;
       display: flex;
       justify-content: center;
-      color: $white;
       @include mobile-subheader;
+      text-decoration: none;
+      color: $white;
       &:hover {
         background-color: $cta-hover;
         border-color: $cta-hover;
