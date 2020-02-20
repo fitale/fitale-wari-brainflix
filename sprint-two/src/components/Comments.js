@@ -15,17 +15,17 @@ export default class Comments extends Component {
     //   return date;
     // };
 
-    let oldComments = this.props.mainVideo.map((comment, i) => {
+    let oldComments = this.props.mainComments.map((comment, i) => {
       // let date = divingDeeper(comment.date);
       return (
         <div key={i} className="comments__old">
           <div className="comments__old--user-img"></div>
           <div className="comments__old--user-content">
             <div className="text">
-              <h3 className="text__name">{comment["name"]}</h3>
-              <p className="text__date">{comment["timestamp"]}</p>
+              <h3 className="text__name">{comment.name}</h3>
+              <p className="text__date">{comment.timestamp}</p>
             </div>
-            <p className="comment">{comment["comment"]}</p>
+            <p className="comment">{comment.comment}</p>
           </div>
         </div>
       );
