@@ -6,7 +6,10 @@ export default class Hero extends Component {
   render() {
     return (
       <section className="hero">
-        <video poster={this.props.heroProp} className="hero__video"></video>
+        <video
+          poster={this.props.mainVideo.image}
+          className="hero__video"
+        ></video>
         <div className="hero__container">
           <div className="hero__container--icons">
             <img

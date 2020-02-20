@@ -6,16 +6,17 @@ import Nextvideo from "./Nextvideo.js";
 
 export default class Home extends Component {
   render() {
+    console.log(this.props.mainVideo);
     return (
       <>
-        <Hero heroProp={this.props.state.mainVideo.image} />
+        <Hero mainVideo={this.props.mainVideo} />
         <main id="huge-flex">
           <div id="huge-flex__left">
-            <Highlights titleProp={this.props.state.mainVideo} />
-            <Comments commentProp={this.props.state.mainVideo.comments} />
+            <Highlights mainVideo={this.props.mainVideo} />
+            {/* <Comments mainVideo={this.props.mainVideo} /> */}
           </div>
           <div id="huge-flex__right">
-            <Nextvideo videoProp={this.props.state.nextVideo} />
+            <Nextvideo sideVideos={this.props.sideVideos} />
           </div>
         </main>
       </>

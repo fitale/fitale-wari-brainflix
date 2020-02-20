@@ -6,14 +6,14 @@ export default class Highlights extends Component {
   render() {
     return (
       <section className="highlights">
-        <h1 className="highlights__title">{this.props.titleProp.title}</h1>
+        <h1 className="highlights__title">{this.props.mainVideo.title}</h1>
         <div className="highlights__flex">
           <div className="highlights__container">
             <h3 className="highlights__container--subtitle">
-              {this.props.titleProp.channel}
+              {this.props.mainVideo.channel}
             </h3>
             <h3 className="highlights__container--thin-label">
-              {this.props.titleProp.timestamp}
+              {this.props.mainVideo.timestamp}
             </h3>
           </div>
           <div className="highlights__container">
@@ -23,7 +23,7 @@ export default class Highlights extends Component {
               className="highlights__container--icon"
             />
             <p className="highlights__container--para">
-              {this.props.titleProp.views}
+              {this.props.mainVideo.views}
             </p>
             <img
               src={likesIcon}
@@ -31,12 +31,12 @@ export default class Highlights extends Component {
               className="highlights__container--icon"
             ></img>
             <p className="highlights__container--para">
-              {this.props.titleProp.likes}
+              {this.props.mainVideo.likes}
             </p>
           </div>
         </div>
 
-        <p className="highlights__para">{this.props.titleProp.description}</p>
+        <p className="highlights__para">{this.props.mainVideo.description}</p>
       </section>
     );
   }
