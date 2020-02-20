@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 export default class Uploads extends Component {
   render() {
     return (

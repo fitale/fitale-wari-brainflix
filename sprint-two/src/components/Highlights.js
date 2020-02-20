@@ -4,6 +4,17 @@ import likesIcon from "../assets/icons/icon-likes.svg";
 
 export default class Highlights extends Component {
   render() {
+    const commentTimestamp = input => {
+      let dateObj = new Date(input);
+      let date =
+        dateObj.getMonth() +
+        1 +
+        "/" +
+        dateObj.getDate() +
+        "/" +
+        dateObj.getFullYear();
+      return date;
+    };
     return (
       <section className="highlights">
         <h1 className="highlights__title">{this.props.mainVideo.title}</h1>
@@ -13,7 +24,7 @@ export default class Highlights extends Component {
               {this.props.mainVideo.channel}
             </h3>
             <h3 className="highlights__container--thin-label">
-              {this.props.mainVideo.timestamp}
+              {commentTimestamp(this.props.mainVideo.timestamp)}
             </h3>
           </div>
           <div className="highlights__container">

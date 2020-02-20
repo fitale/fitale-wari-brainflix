@@ -3,33 +3,33 @@ import userIcon from "../assets/images/user-icon.jpg";
 
 export default class Comments extends Component {
   render() {
-    // const divingDeeper = input => {
-    //   let dateObj = new Date(input);
-    //   let date =
-    //     dateObj.getMonth() +
-    //     1 +
-    //     "/" +
-    //     dateObj.getDate() +
-    //     "/" +
-    //     dateObj.getFullYear();
-    //   return date;
-    // };
-
+    const commentTimestamp = input => {
+      let dateObj = new Date(input);
+      let date =
+        dateObj.getMonth() +
+        1 +
+        "/" +
+        dateObj.getDate() +
+        "/" +
+        dateObj.getFullYear();
+      return date;
+    };
     let oldComments = this.props.mainComments.map((comment, i) => {
-      // let date = divingDeeper(comment.date);
+      let date = commentTimestamp(comment.timestamp);
       return (
         <div key={i} className="comments__old">
           <div className="comments__old--user-img"></div>
           <div className="comments__old--user-content">
             <div className="text">
               <h3 className="text__name">{comment.name}</h3>
-              <p className="text__date">{comment.timestamp}</p>
+              <p className="text__date">{date}</p>
             </div>
             <p className="comment">{comment.comment}</p>
           </div>
         </div>
       );
     });
+    console.log(oldComments);
     return (
       <section className="comments">
         <h3 className="comments__title">Comments</h3>

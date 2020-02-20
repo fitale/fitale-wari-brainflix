@@ -1,11 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-// import * as serviceWorker from "./serviceWorker";
+import Uploads from "./components/Uploads.js";
+import Header from "./components/Header.js";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
-// // If you want your app to work offline and load faster, you can change
-// // unregister() to register() below. Note this comes with some pitfalls.
-// // Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
+ReactDOM.render(
+  <Router>
+    <Header />
+
+    <Switch>
+      <Redirect from="/" to="/videos/1af0jruup5gu" exact />
+      <Route path="/videos/:videoId" component={App} />
+      <Route path="/uploads" component={Uploads} />
+    </Switch>
+  </Router>,
+  document.getElementById("root")
+);
