@@ -7,7 +7,7 @@ export default class Header extends Component {
   render() {
     return (
       <div className="header">
-        <Link to="/">
+        <Link to="/videos/1af0jruup5gu">
           <div className="header__logo">
             <img
               src={brainflixLogo}

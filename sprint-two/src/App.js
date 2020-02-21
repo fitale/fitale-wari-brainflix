@@ -6,7 +6,8 @@ import "./styles/main.css";
 export default class App extends Component {
   state = {
     sideVideos: [],
-    mainVideo: {}
+    mainVideo: {},
+    allVideos: []
   };
 
   componentDidMount() {
@@ -16,20 +17,18 @@ export default class App extends Component {
       .get(
         `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=ac407f21-6062-412c-8461-029adc5f9d9f`
       )
-      .then(response =>
-        this.setState({
-          mainVideo: response.data
-        })
-      );
-
-    axios
-      .get(
-        "https://project-2-api.herokuapp.com/videos?api_key=ac407f21-6062-412c-8461-029adc5f9d9f"
-      )
-      .then(response => {
-        this.setState({
-          sideVideos: response.data.filter(video => video.id !== videoId)
-        });
+      .then(res1 => {
+        axios
+          .get(
+            "https://project-2-api.herokuapp.com/videos?api_key=ac407f21-6062-412c-8461-029adc5f9d9f"
+          )
+          .then(response => {
+            this.setState({
+              allVideos: response.data,
+              sideVideos: response.data.filter(video => video.id !== videoId),
+              mainVideo: res1.data
+            });
+          });
       });
   }
 
@@ -41,22 +40,18 @@ export default class App extends Component {
         )
         .then(response =>
           this.setState({
+            sideVideos: this.state.allVideos.filter(
+              video => video.id !== this.props.match.params.videoId
+            ),
             mainVideo: response.data
           })
         );
-      axios
-        .get(
-          "https://project-2-api.herokuapp.com/videos?api_key=ac407f21-6062-412c-8461-029adc5f9d9f"
-        )
-        .then(response => {
-          this.setState({
-            sideVideos: response.data.filter(
-              video => video.id !== this.props.match.params.videoId
-            )
-          });
-        });
     }
   }
+
+  // addComment = () => {
+  //   console.log("clicked");
+  // };
 
   render() {
     if (this.state.sideVideos.length === 0) {
@@ -79,7 +74,7 @@ export default class App extends Component {
           <Home
             mainVideo={this.state.mainVideo}
             sideVideos={this.state.sideVideos}
-            handleVideoSelect={this.handleVideoSelect}
+            // commentHandler={this.addComment}
           />
         </>
       );

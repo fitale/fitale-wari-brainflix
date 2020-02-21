@@ -92,6 +92,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: AvenirDemi;
@@ -422,6 +425,7 @@
 .comments__container--section .button:hover {
   background-color: #0065ad;
   border-color: #0065ad;
+  cursor: pointer;
 }
 
 .comments__old {
@@ -507,6 +511,7 @@
   .comments__container--section .new-comment__textarea {
     width: 100%;
     height: unset;
+    min-height: 40px;
   }
   .comments__container--section .button {
     width: 160px;
@@ -572,6 +577,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  text-decoration: none;
 }
 
 .next-video__container--img {
@@ -587,6 +593,11 @@
 .next-video__container--text {
   height: 70px;
   max-width: 168px;
+  color: #323232;
+}
+
+.next-video__container--text:hover {
+  color: #0065ad;
 }
 
 .next-video__container--text .title {

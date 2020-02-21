@@ -51,6 +51,7 @@
         &:hover {
           background-color: $cta-hover;
           border-color: $cta-hover;
+          cursor: pointer;
         }
       }
     }
@@ -107,6 +108,7 @@
           &__textarea {
             width: 100%;
             height: unset;
+            min-height: 40px;
           }
         }
         .button {
