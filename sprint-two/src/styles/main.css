@@ -654,6 +654,87 @@
   }
 }
 
+.uploads {
+  margin: 24px 16px 24px;
+}
+
+.uploads__title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: AvenirBold;
+  margin-bottom: 32px;
+}
+
+.uploads__container--flex .title {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
+  color: #afafaf;
+}
+
+.uploads__container--flex .image {
+  width: 90vw;
+  height: 48vw;
+  margin-bottom: 32px;
+  border-radius: 4px;
+}
+
+.uploads__container--flex .input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e1e1e1;
+  background-color: #fafafa;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.uploads__container--flex .input:placeholder-shown {
+  padding-left: 8px;
+  font-family: AvenirRegular;
+}
+
+.uploads__container--flex .textarea {
+  width: 100%;
+  min-height: 45vw;
+  border: 1px solid #e1e1e1;
+  background-color: #fafafa;
+  border-radius: 4px;
+  margin-bottom: 32px;
+  resize: vertical;
+}
+
+.uploads__container--flex .textarea:placeholder-shown {
+  padding-left: 8px;
+  padding-top: 8px;
+  font-family: AvenirRegular;
+}
+
+.uploads__container--button-publish {
+  width: 100%;
+  height: 40px;
+  background-color: #0095ff;
+  border: 1px solid #0095ff;
+  border-radius: 4px;
+  color: #fafafa;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
+}
+
+.uploads__container--button-publish:hover {
+  border: 1px solid #0065ad;
+  background-color: #0065ad;
+}
+
+.uploads__container--button-cancel {
+  width: 100%;
+  height: 40px;
+  color: #0095ff;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
+}
+
 *,
 html,
 body {

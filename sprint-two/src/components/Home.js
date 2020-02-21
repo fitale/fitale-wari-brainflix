@@ -13,7 +13,7 @@ export default function Home(props) {
           <Highlights mainVideo={props.mainVideo} />
           <Comments
             mainComments={props.mainVideo.comments}
-            // commentHandler={props.commentHandler}
+            commentHandler={props.commentHandler}
           />
         </div>
         <div id="huge-flex__right">

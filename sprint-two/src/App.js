@@ -49,9 +49,38 @@ export default class App extends Component {
     }
   }
 
-  // addComment = () => {
-  //   console.log("clicked");
-  // };
+  commentHandler = event => {
+    event.preventDefault();
+    let comment = {
+      name: "fitale wari",
+      comment: event.target.commentInput.value
+    };
+    let newState = [...this.state.mainVideo.comments];
+    newState.push(comment);
+    console.log(newState);
+    axios
+      .post(
+        "https://project-2-api.herokuapp.com/videos/:videoId/comments?api_key=ac407f21-6062-412c-8461-029adc5f9d9f",
+        {
+          name: "fitale wari",
+          comment: event.target.commentInput.value
+        },
+        {
+          validateStatus: function(status) {
+            return status < 600; // Reject only if the status code is greater than or equal to 500
+          }
+        }
+      )
+      .then(response => {
+        // response.push(comment);
+        this.setState({
+          mainVideo: response
+        });
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+  };
 
   render() {
     if (this.state.sideVideos.length === 0) {
@@ -74,7 +103,7 @@ export default class App extends Component {
           <Home
             mainVideo={this.state.mainVideo}
             sideVideos={this.state.sideVideos}
-            // commentHandler={this.addComment}
+            commentHandler={this.commentHandler}
           />
         </>
       );
