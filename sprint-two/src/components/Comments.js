@@ -40,15 +40,15 @@ export default class Comments extends Component {
             className="comments__container--img"
           />
           <div className="comments__container--section">
-            <form onSubmit={this.props.commentHandler} className="new-comment">
+            <form className="new-comment">
               <h3 className="new-comment__title">JOIN THE CONVERSATION</h3>
               <textarea
                 name="commentInput"
                 placeholder="Type your comment here..."
                 className="new-comment__textarea"
               />
-              <button className="button">COMMENT</button>
             </form>
+            <button className="button">COMMENT</button>
           </div>
         </div>
         {oldComments}

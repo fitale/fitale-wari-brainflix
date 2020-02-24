@@ -11,10 +11,7 @@ export default function Home(props) {
       <main id="huge-flex">
         <div id="huge-flex__left">
           <Highlights mainVideo={props.mainVideo} />
-          <Comments
-            mainComments={props.mainVideo.comments}
-            commentHandler={props.commentHandler}
-          />
+          <Comments mainComments={props.mainVideo.comments} />
         </div>
         <div id="huge-flex__right">
           <Nextvideo sideVideos={props.sideVideos} />

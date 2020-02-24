@@ -1,6 +1,6 @@
 .header {
   height: 10.5625rem;
-  margin: 0 1rem;
+  border-bottom: 1px solid $text-border;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +64,7 @@
 @include medium {
   .header {
     height: 80px;
-    margin: 0 24px 16px;
+    margin-bottom: 16px;
     flex-direction: row;
     &__logo {
       width: 124px;
@@ -94,7 +94,7 @@
 
 @include huge {
   .header {
-    margin: 0 180px;
+    border-bottom: unset;
     &__logo {
       width: 148px;
       margin-right: 509px;

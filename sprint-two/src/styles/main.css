@@ -22,7 +22,7 @@
 /* media query for high px density desktop */
 .header {
   height: 10.5625rem;
-  margin: 0 1rem;
+  border-bottom: 1px solid #e1e1e1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,7 +120,7 @@
 @media only screen and (min-width: 768px) {
   .header {
     height: 80px;
-    margin: 0 24px 16px;
+    margin-bottom: 16px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -152,7 +152,7 @@
 
 @media only screen and (min-width: 1440px) {
   .header {
-    margin: 0 180px;
+    border-bottom: unset;
   }
   .header__logo {
     width: 148px;
@@ -655,84 +655,194 @@
 }
 
 .uploads {
-  margin: 24px 16px 24px;
+  margin: 1.5rem 1rem 1.5rem;
 }
 
 .uploads__title {
   font-size: 1.5rem;
   line-height: 2rem;
   font-family: AvenirBold;
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
+  color: #323232;
 }
 
-.uploads__container--flex .title {
+.uploads__container--left .title {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: AvenirDemi;
   color: #afafaf;
 }
 
-.uploads__container--flex .image {
+.uploads__container--left .image {
   width: 90vw;
   height: 48vw;
-  margin-bottom: 32px;
-  border-radius: 4px;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
 }
 
-.uploads__container--flex .input {
+.uploads__container--right .video-content .title {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
+  color: #afafaf;
+}
+
+.uploads__container--right .video-content .input {
   width: 100%;
   height: 40px;
   border: 1px solid #e1e1e1;
   background-color: #fafafa;
-  border-radius: 4px;
-  margin-bottom: 24px;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
 }
 
-.uploads__container--flex .input:placeholder-shown {
-  padding-left: 8px;
+.uploads__container--right .video-content .input:placeholder-shown {
+  padding-left: 0.5rem;
   font-family: AvenirRegular;
 }
 
-.uploads__container--flex .textarea {
+.uploads__container--right .video-content .textarea {
   width: 100%;
   min-height: 45vw;
   border: 1px solid #e1e1e1;
   background-color: #fafafa;
-  border-radius: 4px;
-  margin-bottom: 32px;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
   resize: vertical;
 }
 
-.uploads__container--flex .textarea:placeholder-shown {
-  padding-left: 8px;
-  padding-top: 8px;
+.uploads__container--right .video-content .textarea:placeholder-shown {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
   font-family: AvenirRegular;
 }
 
-.uploads__container--button-publish {
+.uploads__container--right .video-content .button .publish {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: AvenirDemi;
   width: 100%;
   height: 40px;
   background-color: #0095ff;
   border: 1px solid #0095ff;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   color: #fafafa;
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-family: AvenirDemi;
 }
 
-.uploads__container--button-publish:hover {
+.uploads__container--right .video-content .button .publish:hover {
   border: 1px solid #0065ad;
   background-color: #0065ad;
 }
 
-.uploads__container--button-cancel {
-  width: 100%;
-  height: 40px;
-  color: #0095ff;
+.uploads__container--right .video-content .button .cancel {
   font-size: 0.875rem;
   line-height: 1.375rem;
   font-family: AvenirDemi;
+  width: 100%;
+  height: 40px;
+  color: #0095ff;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+}
+
+.uploads__container--right .video-content .button .cancel:hover {
+  border: 1px solid #0065ad;
+}
+
+@media only screen and (min-width: 768px) {
+  .uploads {
+    margin: 3rem 1.5rem 6.25rem;
+  }
+  .uploads__title {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-family: AvenirBold;
+    padding-bottom: 2rem;
+    border-bottom: 0.0625rem solid #e1e1e1;
+    margin-bottom: 2.5rem;
+  }
+  .uploads__container--left .title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: AvenirDemi;
+  }
+  .uploads__container--left .image {
+    width: 45vw;
+    height: 24vw;
+    margin-bottom: 2.5rem;
+  }
+  .uploads__container--right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .uploads__container--right .video-content .title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: AvenirDemi;
+  }
+  .uploads__container--right .video-content .textarea {
+    margin-bottom: 2.5rem;
+    min-height: 8.75rem;
+  }
+  .uploads__container--right .video-content .button {
+    border-top: 0.0625rem solid #e1e1e1;
+    width: 100%;
+    padding-top: 2.5rem;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .uploads__container--right .video-content .button .publish {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: AvenirDemi;
+    margin-left: 3rem;
+    width: 160px;
+  }
+  .uploads__container--right .video-content .button .cancel {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: AvenirDemi;
+    margin: unset;
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .uploads {
+    margin-left: 11.25rem;
+    margin-right: 11.25rem;
+  }
+  .uploads__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .uploads__container--left {
+    margin-right: 1.5rem;
+  }
+  .uploads__container--left .image {
+    width: 24vw;
+    height: 13vw;
+    margin: unset;
+  }
+  .uploads__container--right {
+    width: 100%;
+  }
+  .uploads__container--right .video-content .textarea {
+    height: 5.875rem;
+  }
 }
 
 *,
