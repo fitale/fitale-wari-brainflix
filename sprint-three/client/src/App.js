@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Home from "./components/Home.js";
 import "./styles/main.css";
-
 export default class App extends Component {
   state = {
     sideVideos: [],
@@ -13,31 +12,21 @@ export default class App extends Component {
   componentDidMount() {
     const videoId = "1af0jruup5gu";
 
-    axios
-      .get(
-        `https://project-2-api.herokuapp.com/videos/${videoId}?api_key=ac407f21-6062-412c-8461-029adc5f9d9f`
-      )
-      .then(res1 => {
-        axios
-          .get(
-            "https://project-2-api.herokuapp.com/videos?api_key=ac407f21-6062-412c-8461-029adc5f9d9f"
-          )
-          .then(response => {
-            this.setState({
-              allVideos: response.data,
-              sideVideos: response.data.filter(video => video.id !== videoId),
-              mainVideo: res1.data
-            });
-          });
+    axios.get(`/api/videos/${videoId}`).then(res1 => {
+      axios.get("/api/videos").then(response => {
+        this.setState({
+          allVideos: response.data,
+          sideVideos: response.data.filter(video => video.id !== videoId),
+          mainVideo: res1.data
+        });
       });
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
       axios
-        .get(
-          `https://project-2-api.herokuapp.com/videos/${this.props.match.params.videoId}?api_key=ac407f21-6062-412c-8461-029adc5f9d9f`
-        )
+        .get(`/api/videos/${this.props.match.params.videoId}`)
         .then(response =>
           this.setState({
             sideVideos: this.state.allVideos.filter(
@@ -47,6 +36,13 @@ export default class App extends Component {
           })
         );
     }
+  }
+
+  componentDidCatch(error, errorInfo) {
+    this.setState({
+      error: error,
+      errorInfo: errorInfo
+    });
   }
 
   render() {
