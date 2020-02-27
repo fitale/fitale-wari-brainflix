@@ -12,12 +12,12 @@ export default class App extends Component {
   componentDidMount() {
     const videoId = "1af0jruup5gu";
 
-    axios.get(`/api/videos/${videoId}`).then(res1 => {
-      axios.get("/api/videos").then(response => {
+    axios.get(`http://localhost:5000/api/videos/${videoId}`).then(res1 => {
+      axios.get("http://localhost:5000/api/videos").then(response => {
         this.setState({
           allVideos: response.data,
           sideVideos: response.data.filter(video => video.id !== videoId),
-          mainVideo: res1.data
+          mainVideo: res1.data[0]
         });
       });
     });
@@ -26,13 +26,15 @@ export default class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.match.params.videoId !== this.props.match.params.videoId) {
       axios
-        .get(`/api/videos/${this.props.match.params.videoId}`)
+        .get(
+          `http://localhost:5000/api/videos/${this.props.match.params.videoId}`
+        )
         .then(response =>
           this.setState({
             sideVideos: this.state.allVideos.filter(
               video => video.id !== this.props.match.params.videoId
             ),
-            mainVideo: response.data
+            mainVideo: response.data[0]
           })
         );
     }
