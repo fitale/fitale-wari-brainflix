@@ -28,6 +28,24 @@ router.get("/:videoId", (req, res) => {
   }
 });
 
+console.log("hello");
+router.post("/", (req, res) => {
+  const newVideo = {
+    id: helper.getNewId(),
+    title: req.body.title,
+    description: req.body.description
+  };
+  console.log(newVideo);
+  if (!newVideo.title || !newVideo.description) {
+    return res.status(400).json({
+      errorMessage: "Please provide title, description, and image for the video"
+    });
+  }
+  videos.push(newVideo);
+  helper.writeJSONFile(videosFile, videos);
+  res.json(videos);
+});
+
 // router.put("/:id", (req, res) => {
 //   const found = videos.some(video => video.id === req.params.id);
 //   if (found) {

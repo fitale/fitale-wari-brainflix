@@ -47,6 +47,13 @@ export default class App extends Component {
     });
   }
 
+  eventUpload = event => {
+    event.preventDefault();
+    axios.get("/").then(response => {
+      console.log(response);
+    });
+  };
+
   render() {
     if (this.state.sideVideos.length === 0) {
       return (

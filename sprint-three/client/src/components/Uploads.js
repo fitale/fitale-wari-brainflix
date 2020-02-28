@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import thumbnail from "../assets/images/video-preview.jpg";
+
+eventUpload = event => {
+  event.preventDefault();
+  axios.get("/").then(response => {
+    console.log(response);
+  });
+};
 export default class Uploads extends Component {
   render() {
     return (
-      <form className="uploads" onSubmit={this.props.onSubmit}>
+      <form className="uploads" onSubmit={this.props.eventUpload}>
         <h3 className="uploads__title">Upload Video</h3>
         <div className="uploads__container">
           <div className="uploads__container--left">
