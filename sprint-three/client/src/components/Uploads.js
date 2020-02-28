@@ -3,7 +3,7 @@ import thumbnail from "../assets/images/video-preview.jpg";
 export default class Uploads extends Component {
   render() {
     return (
-      <main className="uploads">
+      <form className="uploads" onSubmit={this.props.onSubmit}>
         <h3 className="uploads__title">Upload Video</h3>
         <div className="uploads__container">
           <div className="uploads__container--left">
@@ -29,7 +29,7 @@ export default class Uploads extends Component {
             </div>
           </div>
         </div>
-      </main>
+      </form>
     );
   }
 }
