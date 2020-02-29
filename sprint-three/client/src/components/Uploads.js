@@ -1,16 +1,23 @@
 import React, { Component } from "react";
 import thumbnail from "../assets/images/video-preview.jpg";
+import axios from "axios";
 
-eventUpload = event => {
-  event.preventDefault();
-  axios.get("/").then(response => {
-    console.log(response);
-  });
-};
 export default class Uploads extends Component {
+  // add constructor props and see Connor's slack messages
+  eventUpload = event => {
+    event.preventDefault();
+    axios
+      .post("/", {
+        title: event.target.title.value,
+        description: event.target.description.value
+      })
+      .then(response => {
+        console.log(response);
+      });
+  };
   render() {
     return (
-      <form className="uploads" onSubmit={this.props.eventUpload}>
+      <form className="uploads" onSubmit={this.eventUpload}>
         <h3 className="uploads__title">Upload Video</h3>
         <div className="uploads__container">
           <div className="uploads__container--left">
@@ -21,11 +28,13 @@ export default class Uploads extends Component {
             <div className="video-content">
               <h4 className="title">TITLE YOUR VIDEO</h4>
               <input
+                name="title"
                 className="input"
                 placeholder="Add a title to your video"
               />
               <h4 className="title">ADD A VIDEO DESCRIPTION</h4>
               <textarea
+                name="description"
                 className="textarea"
                 placeholder="Add a description of your video"
               />

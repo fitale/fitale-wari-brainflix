@@ -28,7 +28,6 @@ router.get("/:videoId", (req, res) => {
   }
 });
 
-console.log("hello");
 router.post("/", (req, res) => {
   const newVideo = {
     id: helper.getNewId(),
