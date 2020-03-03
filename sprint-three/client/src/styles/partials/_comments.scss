@@ -1,18 +1,18 @@
 .comments {
-  margin: 0 16px;
+  margin: 0 1rem;
   &__title {
     @include mobile-subheader;
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
   }
   &__container {
     display: flex;
     justify-content: flex-start;
-    border-bottom: 1px solid $text-border;
+    border-bottom: 0.0625rem solid $text-border;
     &--img {
       height: 48px;
       width: 48px;
       border-radius: 50%;
-      margin-right: 16px;
+      margin-right: 1rem;
     }
     &--section {
       width: 100%;
@@ -22,32 +22,36 @@
           color: $text-label;
         }
         &__textarea {
-          border: 2px solid $cta-text-link;
-          border-radius: 4px;
+          border: 0.125rem solid $cta-text-link;
+          border-radius: 0.25rem;
           width: 100%;
           resize: vertical;
-          height: 150px;
+          height: 9.375rem;
+          padding-left: 0.625rem;
+          padding-top: 0.625rem;
+          outline: none;
           &:focus,
           &:hover {
             cursor: pointer;
-            border: 2px solid $cta-hover;
+            border: 0.125rem solid $cta-hover;
           }
           &:placeholder-shown {
-            padding-left: 10px;
-            padding-top: 10px;
+            padding-left: 0.625rem;
+            padding-top: 0.625rem;
             font-family: AvenirRegular;
           }
         }
       }
       .button {
+        @include mobile-subheader;
         color: $white;
         background-color: $cta-text-link;
         border-color: $cta-text-link;
-        border-radius: 4px;
-        @include mobile-subheader;
+        border-radius: 0.25rem;
         width: 100%;
-        margin: 16px 0 24px;
-        padding: 15px;
+        margin: 1rem 0 1.5rem;
+        padding: 0.9375rem;
+        outline: none;
         &:hover {
           background-color: $cta-hover;
           border-color: $cta-hover;
@@ -58,22 +62,22 @@
   }
   &__old {
     display: flex;
-    border-bottom: 1px solid $text-border;
-    margin-top: 16px;
-    padding-bottom: 16px;
+    border-bottom: 0.0625rem solid $text-border;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
     &--user-img {
       height: 48px;
       width: 48px;
       background-color: $text-border;
       border-radius: 50%;
-      margin-right: 16px;
+      margin-right: 1rem;
     }
     &--user-content {
       width: 82vw;
       .text {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 5px;
+        margin-bottom: 0.3125rem;
         &__name {
           @include mobile-subheader;
         }
@@ -91,7 +95,7 @@
 
 @include medium {
   .comments {
-    margin: 0 24px;
+    margin: 0 1.5rem;
     &__title {
       @include desk-tablet-subheader;
     }
@@ -101,20 +105,20 @@
         display: flex;
         justify-content: flex-start;
         .new-comment {
-          width: 440px;
+          width: 27.5rem;
           &__title {
             @include desk-tablet-labels;
           }
           &__textarea {
             width: 100%;
             height: unset;
-            min-height: 40px;
+            min-height: 2.5rem;
           }
         }
         .button {
-          width: 160px;
-          padding: 8px;
-          margin: 20px 40px 10px 16px;
+          width: 10rem;
+          padding: 0.5rem;
+          margin: 1.25rem 2.5rem 0.625rem 1rem;
         }
       }
     }
@@ -124,7 +128,7 @@
         .text {
           justify-content: unset;
           &__name {
-            margin-right: 10px;
+            margin-right: 0.625rem;
             @include desk-tablet-subheader;
           }
           &__date {
@@ -132,7 +136,6 @@
           }
         }
         .comment {
-          // width: 624px;
           width: 81vw;
           @include desk-tablet-para-comment;
         }
@@ -146,19 +149,15 @@
     &__container {
       &--section {
         .new-comment {
-          width: 436px;
+          width: 27.25rem;
         }
       }
     }
     &__old {
-      width: 712px;
-      &--user-img {
-        height: 48px;
-        width: 48px;
-      }
+      width: 44.5rem;
       &--user-content {
         .comment {
-          width: 616px; // revisit this another time
+          width: 38.5rem;
         }
       }
     }

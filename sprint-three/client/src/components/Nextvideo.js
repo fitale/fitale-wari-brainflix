@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export default class Nextvideo extends Component {
   render() {
     let html = this.props.sideVideos.map(video => {
-      // console.log(video);
       return (
         <Link
           to={`/videos/${video.id}`}

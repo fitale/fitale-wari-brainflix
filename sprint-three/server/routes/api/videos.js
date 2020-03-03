@@ -17,7 +17,6 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:videoId", (req, res) => {
-  console.log(req.params.videoId);
   const found = videos.some(video => video.id === req.params.videoId);
   if (found) {
     res.json(videos.filter(video => video.id === req.params.videoId));

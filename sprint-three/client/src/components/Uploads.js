@@ -26,7 +26,7 @@ export default class Uploads extends Component {
         });
       })
       .catch(err => {
-        console.log(err);
+        return err;
       });
   };
   render() {
@@ -46,6 +46,7 @@ export default class Uploads extends Component {
                 ref={this.title}
                 className="input"
                 placeholder="Add a title to your video"
+                required
               />
               <h4 className="title">ADD A VIDEO DESCRIPTION</h4>
               <textarea
@@ -53,6 +54,7 @@ export default class Uploads extends Component {
                 name="description"
                 className="textarea"
                 placeholder="Add a description of your video"
+                required
               />
               <div className="button">
                 <button className="publish">PUBLISH</button>

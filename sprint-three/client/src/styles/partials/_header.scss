@@ -1,6 +1,6 @@
 .header {
   height: 10.5625rem;
-  border-bottom: 1px solid $text-border;
+  border-bottom: 0.0625rem solid $text-border;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,36 +13,38 @@
     position: relative;
     &--icon {
       position: absolute;
-      top: 15px;
-      left: 10px;
+      top: 0.9375rem;
+      left: 0.625rem;
     }
     &--input {
-      border: 1px solid $text-border;
-      border-radius: 4px;
+      border: 0.0625rem solid $text-border;
+      border-radius: 0.25rem;
       width: 90vw;
-      height: 48px;
+      height: 3rem;
+      padding-left: 2.1875rem;
+      outline: none;
       &:placeholder-shown {
-        padding-left: 35px;
+        padding-left: 2.1875rem;
         font-family: AvenirRegular;
       }
       &:hover {
-        border: 1px solid $cta-hover;
+        border: 0.0625rem solid $cta-hover;
       }
     }
   }
   &__bottom {
     display: flex;
     justify-content: space-between;
-    margin: 8px 0 16px;
+    margin: 0.5rem 0 1rem;
     &--button {
-      width: 226px;
+      @include mobile-subheader;
+      width: 14.125rem;
       background-color: $cta-text-link;
       border-color: $cta-text-link;
-      border-radius: 4px;
+      border-radius: 0.25rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      @include mobile-subheader;
       text-decoration: none;
       color: $white;
       &:hover {
@@ -51,7 +53,7 @@
       }
     }
     &--image {
-      margin-left: 16px;
+      margin-left: 1rem;
       .image {
         width: 48px;
         height: 48px;
@@ -63,30 +65,28 @@
 
 @include medium {
   .header {
-    height: 80px;
-    margin-bottom: 16px;
+    height: 5rem;
     flex-direction: row;
     &__logo {
       width: 124px;
-      //   width: 148px;
-      margin-right: 169px;
+      margin-right: 10.5625rem;
     }
     &__search {
       &--input {
-        width: 230px;
-        margin-right: 24px;
+        width: 14.375rem;
+        margin-right: 1.5rem;
       }
     }
     &__bottom {
       margin: unset;
       &--button {
-        width: 100px;
+        width: 6.25rem;
         .text {
           @include desk-tablet-subheader;
         }
       }
       &--image {
-        margin-left: 24px;
+        margin-left: 1.5rem;
       }
     }
   }
@@ -97,7 +97,7 @@
     border-bottom: unset;
     &__logo {
       width: 148px;
-      margin-right: 509px;
+      margin-right: 31.8125rem;
     }
   }
 }

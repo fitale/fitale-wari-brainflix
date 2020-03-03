@@ -46,7 +46,6 @@ export default class Highlights extends Component {
             </p>
           </div>
         </div>
-
         <p className="highlights__para">{this.props.mainVideo.description}</p>
       </section>
     );

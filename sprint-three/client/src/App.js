@@ -11,7 +11,6 @@ export default class App extends Component {
 
   componentDidMount() {
     const videoId = "1af0jruup5gu";
-
     axios.get(`http://localhost:5000/api/videos/${videoId}`).then(res1 => {
       axios.get("http://localhost:5000/api/videos").then(response => {
         this.setState({
@@ -46,13 +45,6 @@ export default class App extends Component {
       errorInfo: errorInfo
     });
   }
-
-  eventUpload = event => {
-    event.preventDefault();
-    axios.get("/").then(response => {
-      console.log(response);
-    });
-  };
 
   render() {
     if (this.state.sideVideos.length === 0) {

@@ -1,8 +1,8 @@
 .next-video {
-  margin: 40px 16px 0;
+  margin: 2.5rem 1rem 0;
   &__title {
     @include mobile-labels;
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
     color: $text-label;
   }
   &__container {
@@ -11,21 +11,21 @@
     &--img {
       height: 70px;
       width: 120px;
-      margin-bottom: 24px;
-      margin-right: 16px;
-      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      margin-right: 1rem;
+      border-radius: 0.25rem;
       object-fit: cover;
     }
     &--text {
-      height: 70px;
-      max-width: 168px;
+      height: 4.375rem;
+      max-width: 10.5rem;
       color: $para-and-nav;
       &:hover {
         color: $cta-hover;
       }
       .title {
         @include mobile-subheader;
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
@@ -42,20 +42,19 @@
 
 @include medium {
   .next-video {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     &__title {
       @include desk-tablet-labels;
     }
     &__container {
       &--text {
         width: 24vw;
-        height: 70px;
         .title {
-          width: 178px;
+          width: 11.125rem;
           overflow: unset;
           white-space: unset;
-          margin-bottom: 5px;
+          margin-bottom: 0.3125rem;
         }
       }
     }
@@ -65,7 +64,7 @@
 @include huge {
   #huge-flex {
     display: flex;
-    margin: 0 180px;
+    margin: 0 11.25rem;
     &__right {
       .next-video {
         margin-left: 0;
